@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  food-db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=food
+      - POSTGRES_PASSWORD=food
+    volumes:
+      - food-db:/var/lib/postgresql/data
+
+volumes:
+  food-db:
+    driver: local
